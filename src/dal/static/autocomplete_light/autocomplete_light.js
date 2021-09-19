@@ -141,9 +141,9 @@ window.addEventListener("load", function () {
             }
 
             // Ensure element is not already initialized.
-            if (initialized.indexOf(element) >= 0) {
-                return;
-            }
+            //if (initialized.indexOf(element) >= 0) {
+            //    return;
+            //}
 
             // The DAL function to execute.
             var dalFunction = $(element).attr('data-autocomplete-light-function');
@@ -168,6 +168,8 @@ window.addEventListener("load", function () {
             // Add element to the array of already initialized fields
             initialized.push(element);
         }
+        
+        $.fn.initialize = initialize;
 
         if (!window.__dal__initialize) {
             window.__dal__initialize = initialize;
